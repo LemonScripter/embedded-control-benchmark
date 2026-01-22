@@ -47,6 +47,13 @@ The included script `simulation.py` visualizes two drones flying through a turbu
 
 ---
 
+## 🔬 Deep Dive: Verification
+
+Do you want to understand the exact math behind the crash? 
+[👉 Read the Technical Validation Protocol (TECHNICAL_VALIDATION.md)](TECHNICAL_VALIDATION.md)
+
+---
+
 ## 🛠️ Installation & Usage
 
 ### Prerequisites
@@ -108,4 +115,3 @@ This benchmark validates the engineering necessity of decoupling **mathematical 
 ---
 
 **Maintained by:** MetaSpace Technologies R&D  
-*Harghita County, EU*
