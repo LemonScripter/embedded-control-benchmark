@@ -30,7 +30,7 @@ If the computation time ($T_{compute}$) exceeds the loop time ($T_{loop}$), the 
 
 ## 🛸 Simulation Demo
 
-![Simulation Preview](crash_demo.gif)
+![Simulation Preview](demo.gif)
 
 <img src="crash_demo.gif" width="100%" alt="Simulation Preview">
 
@@ -124,3 +124,4 @@ This benchmark validates the engineering necessity of decoupling **mathematical 
 
 
 **Maintained by:** MetaSpace Technologies R&D  
+
