@@ -34,10 +34,6 @@ If the computation time ($T_{compute}$) exceeds the loop time ($T_{loop}$), the 
 
 <img src="crash_demo.gif" width="100%" alt="Simulation Preview">
 
----
-
-## 🛸 The Simulation Demo
-
 The included script `simulation.py` visualizes two drones flying through a turbulence zone (stress test).
 
 ### Left Drone: "Traditional Implementation"
@@ -124,4 +120,5 @@ This benchmark validates the engineering necessity of decoupling **mathematical 
 
 
 **Maintained by:** MetaSpace Technologies R&D  
+
 
