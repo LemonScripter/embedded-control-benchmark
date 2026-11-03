@@ -1,0 +1,183 @@
+{
+ "repo": "embedded-control-benchmark",
+ "claims": [
+  {
+   "id": "BM-01",
+   "status": "MEASURED",
+   "statement": "Instructions per control step on the ESP32-C3-class RV32IMC build (typical / worst), N=20.",
+   "evidence": [
+    {
+     "file": "fedelzeti_c3/log_N20.txt",
+     "contains": "tipikus 906279 utasítás, legrosszabb 2948128"
+    }
+   ],
+   "docs": [
+    {
+     "file": "README.md",
+     "text": "906,279 / 2,948,128 (**MEASURED**, emulator)"
+    }
+   ],
+   "numbers": [
+    "906,279",
+    "2,948,128"
+   ]
+  },
+  {
+   "id": "BM-02",
+   "status": "MEASURED",
+   "statement": "Code size of the C3 build.",
+   "evidence": [
+    {
+     "file": "fedelzeti_c3/log_N20.txt",
+     "contains": "\\.text 30530 B"
+    }
+   ],
+   "docs": [
+    {
+     "file": "README.md",
+     "text": "30,530 B (**MEASURED**)"
+    }
+   ],
+   "numbers": [
+    "30,530"
+   ]
+  },
+  {
+   "id": "BM-03",
+   "status": "ESTIMATED",
+   "statement": "Time per step on an ESP32-C3 at 160 MHz, typical / worst case (assumed cycles per instruction).",
+   "evidence": [
+    {
+     "file": "fedelzeti_c3/log_N20.txt",
+     "contains": "BECSÜLT IDŐ"
+    }
+   ],
+   "docs": [
+    {
+     "file": "README.md",
+     "text": "5.7–7.2 ms / 18.4–23.5 ms"
+    }
+   ],
+   "numbers": [
+    {
+     "evidence": "5.664",
+     "doc": "5.7"
+    },
+    {
+     "evidence": "7.202",
+     "doc": "7.2"
+    },
+    {
+     "evidence": "18.426",
+     "doc": "18.4"
+    },
+    {
+     "evidence": "23.465",
+     "doc": "23.5"
+    }
+   ]
+  },
+  {
+   "id": "BM-04",
+   "status": "MEASURED",
+   "statement": "Fleet (500 drones): violating steps %, plain EKF fixed noise, four scenarios.",
+   "evidence": [
+    {
+     "file": "results/kolumban_flotta_log.txt"
+    }
+   ],
+   "docs": [
+    {
+     "file": "README.md",
+     "text": "| plain EKF, fixed noise | 0.13 | 10.7 | 9.4 | 7.2 |"
+    }
+   ],
+   "numbers": [
+    {
+     "evidence": "0.126",
+     "doc": "0.13"
+    },
+    {
+     "evidence": "10.745",
+     "doc": "10.7"
+    },
+    {
+     "evidence": "9.436",
+     "doc": "9.4"
+    },
+    {
+     "evidence": "7.179",
+     "doc": "7.2"
+    }
+   ]
+  },
+  {
+   "id": "BM-05",
+   "status": "MEASURED",
+   "statement": "Fleet (500 drones): violating steps %, robust EKF.",
+   "evidence": [
+    {
+     "file": "results/kolumban_flotta_log.txt"
+    }
+   ],
+   "docs": [
+    {
+     "file": "README.md",
+     "text": "| **robust EKF** | 0.12 | 1.04 | 1.77 | 0.85 |"
+    }
+   ],
+   "numbers": [
+    {
+     "evidence": "0.119",
+     "doc": "0.12"
+    },
+    {
+     "evidence": "1.036",
+     "doc": "1.04"
+    },
+    {
+     "evidence": "1.774",
+     "doc": "1.77"
+    },
+    {
+     "evidence": "0.850",
+     "doc": "0.85"
+    }
+   ]
+  },
+  {
+   "id": "BM-06",
+   "status": "MEASURED",
+   "statement": "Fleet (500 drones): violating steps %, Kolumbán hull + envelope.",
+   "evidence": [
+    {
+     "file": "results/kolumban_flotta_log.txt"
+    }
+   ],
+   "docs": [
+    {
+     "file": "README.md",
+     "text": "| **Kolumbán hull + envelope** | 0.35 | 1.18 | 1.87 | 1.01 |"
+    }
+   ],
+   "numbers": [
+    {
+     "evidence": "0.353",
+     "doc": "0.35"
+    },
+    {
+     "evidence": "1.176",
+     "doc": "1.18"
+    },
+    {
+     "evidence": "1.874",
+     "doc": "1.87"
+    },
+    {
+     "evidence": "1.006",
+     "doc": "1.01"
+    }
+   ]
+  }
+ ]
+}
