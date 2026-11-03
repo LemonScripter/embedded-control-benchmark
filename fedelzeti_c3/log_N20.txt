@@ -1,0 +1,19 @@
+﻿E27b | ESP32-C3 (RV32IMC, FPU nélkül, 160 MHz) emulátor | N = 20
+kód: .text 30530 B (+ .rodata 172 B) | statikus RAM: .bss 3996 B + .data 8948 B (benne a tesztkeret másolata: SIGN 3960 B + a szűrő saját sign-táblája 3960 B)
+
+ELLENŐRZÉS a Python (f64) referenciával: theta emul 1.004133, 0.535335 | Python 1.004133, 0.535334 | max eltérés 3.42e-07
+  W emul 5.93542, -0.38830, 1.04859 | Python 5.93542, -0.38830, 1.04859 | nem-pd ellipszoid: emul 0, Python 0
+  burok-tartószám (16 irány): max abs eltérés 6.86e-07
+  kapu (u): 20 eset, max eltérés 0.0195 (a Python rács 0.025 lépésközű)
+
+UTASÍTÁSSZÁM / LÉPÉS (MÉRT, emulátor):
+  push (1 minta, inkrementális): 30730   derive (θ, W, 99 ellipszoid): 557992
+  kapu: legkisebb 312624 (átengedett), medián 317557 (átengedett), LEGROSSZABB 2359406 (korlátozott)
+  (a kezdeti ablak-feltöltés N = 20 minta: 1249611 utasítás; ez csak felszállás előtt, egyszer)
+  EGY VEZÉRLÉSI LÉPÉS: tipikus 906279 utasítás, legrosszabb 2948128 utasítás
+
+BECSÜLT IDŐ az ESP32-C3-on (utasításszám MÉRT; ciklus/utasítás FELTEVÉS: optimista = 1 ciklus, osztás 20; pesszimista = betöltés 2, vett ugrás +2, szorzás 4, osztás 35):
+  tipikus     :  5.664 –  7.202 ms  (906298 – 1152362 ciklus 160 MHz-en)
+  legrosszabb : 18.426 – 23.465 ms  (2948147 – 3754357 ciklus 160 MHz-en)
+  utasítás-összetétel (legrosszabb lépés): alu 2220003, load 23231, store 8544, branch 429677, branch_taken 159149, jump 167675, mul 98997, div 1
+  => a legrosszabb lépés 23.46 ms (pesszimista) -> 11 Hz-ig tartható 4x-es tartalékkal; 20 Hz-es (50 ms) hurok CPU-terhelése 46.9%

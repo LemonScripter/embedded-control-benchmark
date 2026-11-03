@@ -1,0 +1,23 @@
+﻿== ELLENORZES a Python (f64) referenciaval | N = 12
+theta Rust [1.0778718, 0.547582]  Python [1.0778719, 0.547582]  max eltérés 1.19e-7
+W     Rust [7.902311, -0.085656546, 0.9932709]  Python [7.902311, -0.08565653, 0.9932709]  max eltérés 1.49e-8
+nem-pozitiv-definit ellipszoidok: Rust 0  Python 0
+burok-tartoszam (16 irany): max abs eltérés 3.64e-6, max relatív 1.23e-5
+kapu (u): 20 eset, max eltérés 0.0156, átlag 0.0038, >0.03: 0 (a Python rács 0.025 lépésközű)
+inkrementális (1000 csúszó lépés) vs. teljes újraszámolás, max relatív eltérés a B_i, A_i összegekben: 1.05e-5
+
+== MEMORIA (f32): Filter szerkezet 8948 bajt (ebbol az elojel-tabla 3960 bajt i8-kent, bitekkent ~495 bajt)
+
+== IDOMERES (PC, WebAssembly/V8, f32, 1 mag; 20000 iteráció; ellenőrző összeg 71946.203)
+push (inkrementális ablak-frissítés): 4.06 µs | derive (θ, W, 99 ellipszoid): 17.28 µs
+kapu a 20 valódi esetre: min 9.47 µs, medián 16.13 µs, max 83.77 µs | állapotok [átengedett, korlátozott, vész, tartalék] = [11, 9, 0, 0]
+egy vezérlési lépés (push + derive + kapu): medián 37.47 µs, legrosszabb 105.11 µs
+
+== MUVELETSZAM / LEPES (add-sub | mul | div | sqrt | cmp)
+push                       add    505  mul    505  div     0  sqrt     0  cmp      0 | flop   1010
+derive                     add   3376  mul   4963  div   305  sqrt   101  cmp    100 | flop   8339
+kapu, legkisebb            add   1005  mul   1800  div     4  sqrt   200  cmp    685 | flop   2805  (állapot 0)
+kapu, medián               add   1005  mul   1800  div     4  sqrt   200  cmp    695 | flop   2805  (állapot 0)
+kapu, LEGROSSZABB          add   7554  mul  13506  div    30  sqrt  1500  cmp   5180 | flop  21060  (állapot 1)
+
+WCET-jellegű összeg (push + derive + a legrosszabb kapu): flop 30409 | div 335 | sqrt 1601 | cmp 5280

@@ -1,0 +1,69 @@
+SZIMULACIO (E28, flotta). 500 dron/forgatokonyv, T=400, teherváltás 120. lepesben, Nw=20, kozos beallitas, ervenyes deklaralt tartomany
+
+=== forgatokonyv: laplace | 500 dron | futasido 1176 s
+architektura serulo lepes %  tartosan serto dron %  legrosszabb 5% dron   van serules dron % [Wilson]  beavatk. kov. hiba  vesz %
+PID                28.639                   99.6                53.84          100.0 [99.2,100.0]     0.000     0.213    0.00
+EKF-nom             0.126                    0.2                 1.31           19.2 [16.0,22.9]     0.239     0.154    0.00
+EKF-becs            0.120                    0.4                 1.29           19.6 [16.4,23.3]     0.241     0.155    0.00
+EKF-rob             0.119                    0.4                 1.29           18.2 [15.1,21.8]     0.239     0.154    0.00
+BUROK+D             0.353                    6.2                 3.20           31.2 [27.3,35.4]     0.225     0.154    0.02
+DOBOZ               0.000                    0.0                 0.00            0.0 [0.0,0.8]     0.348     0.186    0.00
+ORA                 0.000                    0.0                 0.00            0.0 [0.0,0.8]     0.195     0.152    0.00
+  PAROSITOTT (dron-szintu 'tartosan serto' >2%, McNemar):
+    BUROK+D  vs EKF-nom  : csak BUROK+D serto   30, csak EKF-nom serto    0 | p = 0.0000  *
+    BUROK+D  vs EKF-becs : csak BUROK+D serto   29, csak EKF-becs serto    0 | p = 0.0000  *
+    BUROK+D  vs EKF-rob  : csak BUROK+D serto   29, csak EKF-rob serto    0 | p = 0.0000  *
+    BUROK+D  vs DOBOZ    : csak BUROK+D serto   31, csak DOBOZ serto    0 | p = 0.0000  *
+    EKF-rob  vs EKF-becs : csak EKF-rob serto    0, csak EKF-becs serto    0 | p = 1.0000
+    EKF-becs vs PID      : csak EKF-becs serto    0, csak PID serto  496 | p = 0.0000  *
+
+=== forgatokonyv: vastag | 500 dron | futasido 1009 s
+architektura serulo lepes %  tartosan serto dron %  legrosszabb 5% dron   van serules dron % [Wilson]  beavatk. kov. hiba  vesz %
+PID                29.153                   99.8                53.24          100.0 [99.2,100.0]     0.000     0.533    0.00
+EKF-nom            10.745                   49.8                87.93           94.6 [92.3,96.3]     0.475     2.265    9.55
+EKF-becs            6.045                   33.6                68.87           81.6 [78.0,84.8]     0.377     1.230    4.51
+EKF-rob             1.036                   14.0                 6.98           72.8 [68.7,76.5]     0.238     0.494    0.98
+BUROK+D             1.176                   17.6                 7.38           75.2 [71.2,78.8]     0.233     0.495    1.03
+DOBOZ               0.875                   10.8                 6.68           63.4 [59.1,67.5]     0.335     0.515    0.99
+ORA                 0.917                   11.4                 6.69           67.8 [63.6,71.7]     0.189     0.492    0.92
+  PAROSITOTT (dron-szintu 'tartosan serto' >2%, McNemar):
+    BUROK+D  vs EKF-nom  : csak BUROK+D serto    5, csak EKF-nom serto  166 | p = 0.0000  *
+    BUROK+D  vs EKF-becs : csak BUROK+D serto    9, csak EKF-becs serto   89 | p = 0.0000  *
+    BUROK+D  vs EKF-rob  : csak BUROK+D serto   21, csak EKF-rob serto    3 | p = 0.0003  *
+    BUROK+D  vs DOBOZ    : csak BUROK+D serto   34, csak DOBOZ serto    0 | p = 0.0000  *
+    EKF-rob  vs EKF-becs : csak EKF-rob serto    4, csak EKF-becs serto  102 | p = 0.0000  *
+    EKF-becs vs PID      : csak EKF-becs serto    0, csak PID serto  331 | p = 0.0000  *
+
+=== forgatokonyv: roham | 500 dron | futasido 936 s
+architektura serulo lepes %  tartosan serto dron %  legrosszabb 5% dron   van serules dron % [Wilson]  beavatk. kov. hiba  vesz %
+PID                28.760                  100.0                53.74          100.0 [99.2,100.0]     0.000     0.538    0.00
+EKF-nom             9.436                   64.0                79.47           95.6 [93.4,97.1]     0.403     1.900    7.68
+EKF-becs            2.437                   34.6                18.57           78.8 [75.0,82.2]     0.268     0.594    2.11
+EKF-rob             1.774                   32.0                 9.22           76.6 [72.7,80.1]     0.241     0.504    1.58
+BUROK+D             1.874                   33.2                 9.51           80.6 [76.9,83.8]     0.229     0.505    1.64
+DOBOZ               1.393                   25.4                 8.65           65.4 [61.1,69.4]     0.328     0.521    1.58
+ORA                 1.482                   25.6                 8.74           73.4 [69.4,77.1]     0.184     0.501    1.48
+  PAROSITOTT (dron-szintu 'tartosan serto' >2%, McNemar):
+    BUROK+D  vs EKF-nom  : csak BUROK+D serto    7, csak EKF-nom serto  161 | p = 0.0000  *
+    BUROK+D  vs EKF-becs : csak BUROK+D serto   22, csak EKF-becs serto   29 | p = 0.4011
+    BUROK+D  vs EKF-rob  : csak BUROK+D serto   20, csak EKF-rob serto   14 | p = 0.3915
+    BUROK+D  vs DOBOZ    : csak BUROK+D serto   41, csak DOBOZ serto    2 | p = 0.0000  *
+    EKF-rob  vs EKF-becs : csak EKF-rob serto    8, csak EKF-becs serto   21 | p = 0.0241  *
+    EKF-becs vs PID      : csak EKF-becs serto    0, csak PID serto  327 | p = 0.0000  *
+
+=== forgatokonyv: vegyes | 500 dron | futasido 936 s
+architektura serulo lepes %  tartosan serto dron %  legrosszabb 5% dron   van serules dron % [Wilson]  beavatk. kov. hiba  vesz %
+PID                29.080                   99.8                53.71           99.8 [98.9,100.0]     0.000     0.383    0.00
+EKF-nom             7.179                   38.4                79.22           75.0 [71.0,78.6]     0.376     1.389    5.85
+EKF-becs            2.703                   17.4                39.35           52.2 [47.8,56.5]     0.298     0.651    2.23
+EKF-rob             0.850                   13.4                 7.14           50.2 [45.8,54.6]     0.243     0.339    0.77
+BUROK+D             1.006                   16.0                 7.19           60.0 [55.6,64.2]     0.233     0.339    0.82
+DOBOZ               0.667                   10.2                 6.89           35.8 [31.7,40.1]     0.335     0.363    0.77
+ORA                 0.720                   11.2                 7.02           40.8 [36.6,45.2]     0.189     0.336    0.72
+  PAROSITOTT (dron-szintu 'tartosan serto' >2%, McNemar):
+    BUROK+D  vs EKF-nom  : csak BUROK+D serto   13, csak EKF-nom serto  125 | p = 0.0000  *
+    BUROK+D  vs EKF-becs : csak BUROK+D serto   22, csak EKF-becs serto   29 | p = 0.4011
+    BUROK+D  vs EKF-rob  : csak BUROK+D serto   20, csak EKF-rob serto    7 | p = 0.0192  *
+    BUROK+D  vs DOBOZ    : csak BUROK+D serto   29, csak DOBOZ serto    0 | p = 0.0000  *
+    EKF-rob  vs EKF-becs : csak EKF-rob serto    9, csak EKF-becs serto   29 | p = 0.0017  *
+    EKF-becs vs PID      : csak EKF-becs serto    0, csak PID serto  412 | p = 0.0000  *

@@ -1,0 +1,39 @@
+﻿SZIMULACIO (E26, zart hurku repules). 300 epizod/cella, T=400 lepes, teherváltás a 120. lepesben, csuszó ablak Nw=12, kornyezet: ervenyes
+
+=== zaj: laplace, Nw=12, kornyezet: ervenyes | epizod 300
+architektura serulo lepes %     van serules epizod % [Wilson]  teherv. utan %  beavatk. kov. hiba  vesz % nincs ger.%  ms/lepes
+PID                27.058          99.7 [98.1,99.9]           23.69     0.000     0.208    0.00        0.00     0.000
+NOM                13.304          95.0 [91.9,96.9]           14.28     0.186     0.156    0.00        0.00     0.000
+EKF-nom             0.155          21.7 [17.4,26.7]            1.57     0.223     0.152    0.00        0.00     0.373
+EKF-becs            0.163          21.7 [17.4,26.7]            1.65     0.225     0.152    0.00        0.00     0.381
+BUROK              11.330          89.7 [85.7,92.6]           13.82     0.669     0.746   24.19        0.13    10.691
+BUROK+D             0.186          26.0 [21.4,31.2]            1.65     0.225     0.153    0.00        0.00    23.939
+DOBOZ               0.000           0.0 [0.0,1.3]            0.00     0.324     0.183    0.00        0.00     0.000
+ORA                 0.000           0.0 [0.0,1.3]            0.00     0.183     0.150    0.00        0.00     0.000
+  PAROSITOTT (epizod-szintu 'van serules', McNemar):
+    BUROK    vs EKF-becs : csak BUROK serul  205, csak EKF-becs serul    1 | p = 0.0000  *
+    BUROK    vs EKF-nom  : csak BUROK serul  205, csak EKF-nom serul    1 | p = 0.0000  *
+    BUROK    vs NOM      : csak BUROK serul   12, csak NOM serul   28 | p = 0.0166  *
+    BUROK+D  vs EKF-becs : csak BUROK+D serul   34, csak EKF-becs serul   21 | p = 0.1048
+    BUROK+D  vs BUROK    : csak BUROK+D serul    4, csak BUROK serul  195 | p = 0.0000  *
+    BUROK+D  vs DOBOZ    : csak BUROK+D serul   78, csak DOBOZ serul    0 | p = 0.0000  *
+    EKF-becs vs PID      : csak EKF-becs serul    0, csak PID serul  234 | p = 0.0000  *
+
+=== zaj: szeles, Nw=12, kornyezet: ervenyes | epizod 300
+architektura serulo lepes %     van serules epizod % [Wilson]  teherv. utan %  beavatk. kov. hiba  vesz % nincs ger.%  ms/lepes
+PID                28.936         100.0 [98.7,100.0]           30.88     0.000     0.244    0.00        0.00     0.000
+NOM                15.053          94.0 [90.7,96.2]           20.48     0.193     0.196    0.02        0.00     0.000
+EKF-nom             1.917          92.3 [88.8,94.8]            4.12     0.243     0.194    0.04        0.00     0.333
+EKF-becs            0.132          18.0 [14.1,22.7]            1.30     0.270     0.197    0.02        0.00     0.348
+BUROK              15.661          95.3 [92.3,97.2]           17.19     0.913     0.950   33.62        0.08     9.577
+BUROK+D             0.179          29.3 [24.5,34.7]            0.79     0.280     0.202    0.02        0.00    20.900
+DOBOZ               0.003           1.0 [0.3,2.9]            0.00     0.343     0.219    0.01        0.00     0.000
+ORA                 0.013           4.7 [2.8,7.7]            0.03     0.198     0.191    0.01        0.00     0.000
+  PAROSITOTT (epizod-szintu 'van serules', McNemar):
+    BUROK    vs EKF-becs : csak BUROK serul  233, csak EKF-becs serul    1 | p = 0.0000  *
+    BUROK    vs EKF-nom  : csak BUROK serul   22, csak EKF-nom serul   13 | p = 0.1755
+    BUROK    vs NOM      : csak BUROK serul   16, csak NOM serul   12 | p = 0.5716
+    BUROK+D  vs EKF-becs : csak BUROK+D serul   52, csak EKF-becs serul   18 | p = 0.0001  *
+    BUROK+D  vs BUROK    : csak BUROK+D serul    4, csak BUROK serul  202 | p = 0.0000  *
+    BUROK+D  vs DOBOZ    : csak BUROK+D serul   85, csak DOBOZ serul    0 | p = 0.0000  *
+    EKF-becs vs PID      : csak EKF-becs serul    0, csak PID serul  246 | p = 0.0000  *
